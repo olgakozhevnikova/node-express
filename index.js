@@ -13,25 +13,6 @@ const app = express();
 app.use(morgan('dev'));
 app.use(bodyParser.json());
 
-// // Actions for /:dishId endpoint
-// app.get('/dishes/:dishId', (req, res) => {
-//   res.end('Will send details of the dish: ' + req.params.dishId + ' to you!');
-// });
-
-// app.post('/dishes/:dishId', (req, res) => {
-//   res.statusCode = 403;
-//   res.end('POST operation is not supported on /dishes/' + req.params.dishId);
-// });
-
-// app.put('/dishes/:dishId', (req, res) => {
-//   res.write('Updating the dish: ' + req.params.dishId);
-//   res.end('Will update the dish: ' + req.body.name + ' with details: ' + req.body.description);
-// });
-
-// app.delete('/dishes/:dishId', (req, res) => {
-//   res.end('Deleting dish: ' + req.params.dishId);
-// });
-
 app.use('/dishes', dishRouter);
 
 // (__dirname + '/public') informs express.static, that I will look at the folder 'public'
